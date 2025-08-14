@@ -1,0 +1,484 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #ffffff;
+}
+
+/* --- Container untuk konten terpusat --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Header --- */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+  background-color: #007a6b;
+  color: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-kiri h1 {
+  font-size: 24px;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+
+.header-kiri p {
+  font-size: 14px;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.header-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #f9f9f9;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+  padding: 5px 0;
+}
+
+.header-nav a:hover,
+.header-nav .active a {
+  color: #ffe700;
+  border-bottom: 2px solid #ffe700;
+}
+
+.header-kanan {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-kanan img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* --- Main Content Styling --- */
+
+/* Hero Sections */
+.hero-section, .hero-proker, .hero-galeri {
+  position: relative;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f9f9f9;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-section {
+  background-image: url('/public/assets/topejawa.jpg');
+}
+
+.hero-proker {
+  background-image: url('/public/assets/proker-hero.jpg');
+}
+
+.hero-galeri {
+  background-image: url('/public/assets/galeri-hero.jpeg');
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content p {
+  font-size: 20px;
+  font-weight: 400;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Sections */
+.sejarah-section, .team-section, .proker-list-section, .galeri-section, .map-section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.sejarah-section, .proker-list-section, .map-section {
+  background-color: #f4f7f6;
+}
+
+.team-section, .galeri-section {
+  background-color: #fff;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #2c3e50;
+  font-weight: 700;
+  text-align: center;
+}
+
+.sejarah-content p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+}
+
+/* Proker Grid - REVISED */
+.proker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  align-items: stretch; /* Memastikan semua item dalam grid meregang sama tinggi */
+}
+
+.proker-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  display: flex; /* Menggunakan flexbox untuk layouting */
+  flex-direction: column; /* Konten diatur secara vertikal */
+}
+
+.proker-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.proker-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.proker-card .card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Memungkinkan bagian ini untuk tumbuh dan mengisi ruang kosong */
+}
+
+.proker-card h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #007a6b;
+  min-height: 58px; /* Memberikan tinggi minimum untuk judul agar rata */
+}
+
+.proker-card .proker-penanggungjawab {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.proker-card p {
+  font-size: 14px;
+  color: #555;
+  flex-grow: 1; /* Deskripsi juga bisa tumbuh */
+}
+
+
+/* Galeri Grid */
+.galeri-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.galeri-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.galeri-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.galeri-item .galeri-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #f9f9f9;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.galeri-item:hover .galeri-caption {
+  transform: translateY(0);
+}
+
+/* Team Section */
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-member {
+  position: relative;
+  width: 300px;
+  background-color: #f4f7f6;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.member-role {
+  font-size: 14px;
+  font-weight: 600;
+  color: #007a6b;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffe700;
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+.team-member img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffe700;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.team-member:hover img {
+  opacity: 0.3;
+  transform: scale(1.1);
+}
+
+.member-details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #2c3e50;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 10px;
+  width: 100%;
+}
+
+.team-member:hover .member-details {
+  opacity: 1;
+  visibility: visible;
+}
+
+.member-details h3 {
+  font-size: 25px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.member-details p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Map Section */
+.map-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  background-color: #007a6b;
+  color: #f9f9f9;
+  padding-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.footer-info, .footer-quicklinks, .footer-social, .footer-about {
+  text-align: left;
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-info h3, .footer-quicklinks h3, .footer-social h3, .footer-about h3 {
+  color: #ffe700;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-info p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.footer-quicklinks a, .footer-social a {
+  display: block;
+  color: #f9f9f9;
+  text-decoration: none;
+  margin-bottom: 5px;
+  transition: color 0.3s;
+}
+
+.footer-quicklinks a:hover, .footer-social a:hover {
+  color: #ffe700;
+}
+
+.footer-about p {
+  font-size: 14px;
+  color: #f9f9f9;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  padding: 20px 0;
+}
+.footer-bottom p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* --- Media Queries (Responsif) --- */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  .header-kiri, .header-nav {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .header-nav ul {
+    justify-content: center;
+    gap: 15px;
+  }
+  .header-kanan {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+  
+  h2 {
+    font-size: 28px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-info, .footer-quicklinks, .footer-social, .footer-about {
+    text-align: center;
+    margin-bottom: 20px;
+    max-width: none;
+  }
+  
+  .proker-grid, .galeri-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+  
+  .header-kanan img {
+    height: 45px;
+  }
+}
